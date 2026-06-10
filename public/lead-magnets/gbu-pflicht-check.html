@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>GBU-Pflicht-Check — GefaehrdungsbeurteilungAI</title>
+  <style>
+    @page { size: A4; margin: 22mm 18mm; }
+    :root {
+      --cognac-100:#f3e3cf; --cognac-300:#d9a772; --cognac-500:#a36a2a; --cognac-700:#6f461c;
+      --parchment-50:#fdfaf3; --parchment-100:#faf6ec; --parchment-300:#e8dcc1;
+      --ink:#1a1a1a; --ink-muted:#5b5b5b; --ink-subtle:#8a8a8a;
+    }
+    *,*::before,*::after { box-sizing: border-box; }
+    html,body { margin:0; padding:0; }
+    body {
+      font-family: 'Georgia', 'Source Serif Pro', serif;
+      color: var(--ink);
+      background: var(--parchment-100);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 48px;
+      background: white;
+      box-shadow: 0 4px 14px rgba(20,15,8,0.06);
+    }
+    header.brand-bar {
+      border-bottom: 2px solid var(--cognac-300);
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--cognac-700);
+    }
+    h1 {
+      font-size: 36px;
+      line-height: 1.12;
+      margin: 8px 0 6px;
+      letter-spacing: -.02em;
+      font-weight: 700;
+    }
+    .subtitle {
+      color: var(--ink-muted);
+      font-size: 16px;
+      font-style: italic;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      letter-spacing: -.01em;
+      page-break-after: avoid;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 22px;
+      background: var(--cognac-500);
+      margin-right: 12px;
+      vertical-align: -3px;
+      border-radius: 2px;
+    }
+    p { margin: 10px 0; }
+    ul, ol { margin: 10px 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    blockquote {
+      margin: 16px 0;
+      padding: 14px 20px;
+      background: var(--parchment-50);
+      border-left: 4px solid var(--cognac-500);
+      font-family: 'Inter','Helvetica Neue',Arial,sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      page-break-inside: avoid;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-family: 'Inter','Helvetica Neue',Arial,sans-serif;
+      font-size: 13px;
+      page-break-inside: avoid;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--parchment-300);
+      vertical-align: top;
+    }
+    th {
+      background: var(--parchment-50);
+      font-weight: 600;
+      color: var(--cognac-700);
+      font-size: 11px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    strong { color: var(--ink); }
+    footer.cta {
+      margin-top: 56px;
+      padding: 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--parchment-50), var(--cognac-100));
+      border: 1px solid var(--cognac-300);
+      page-break-inside: avoid;
+    }
+    footer.cta h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+    footer.cta p {
+      margin: 0;
+      color: var(--ink-muted);
+      font-size: 14px;
+    }
+    footer.cta a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: var(--cognac-500);
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-family: 'Inter','Helvetica Neue',Arial,sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    footer.legal {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid var(--parchment-300);
+      color: var(--ink-subtle);
+      font-size: 11px;
+      font-family: 'Inter','Helvetica Neue',Arial,sans-serif;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; padding: 0; }
+      footer.cta { background: var(--parchment-50); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="brand-bar">
+      <div class="eyebrow">GefaehrdungsbeurteilungAI · Lead-Magnet</div>
+      <h1>GBU-Pflicht-Check</h1>
+      <p class="subtitle">Bin ich verpflichtet? Die 7 Schritte zur audit-sicheren Gefährdungsbeurteilung</p>
+    </header>
+
+    <main>
+      <h2>Selbst-Check: Bin ich GBU-pflichtig?</h2>
+<table>
+  <tr><th>Frage</th><th>Antwort</th></tr>
+  <tr><td>Beschäftigen Sie mindestens 1 Mitarbeiter?</td><td>Ja → GBU-Pflicht nach §5 ArbSchG, ohne Ausnahme</td></tr>
+  <tr><td>Auch Minijobber / Azubis / Praktikanten?</td><td>Ja — zählen als Beschäftigte</td></tr>
+  <tr><td>Reicht eine mündliche Bewertung?</td><td>Nein — §6 ArbSchG verlangt DOKUMENTATION (seit 2013 unabhängig von Betriebsgröße)</td></tr>
+  <tr><td>Gilt das pro Betrieb oder pro Tätigkeit?</td><td>Pro Tätigkeit / Arbeitsbereich — gleichartige Bereiche dürfen zusammengefasst werden</td></tr>
+</table>
+
+<h2>Die 7 Schritte (GDA-Leitlinie)</h2>
+<ol>
+  <li>Arbeitsbereiche und Tätigkeiten festlegen</li>
+  <li>Gefährdungen ermitteln (Begehung, Beschäftigte einbeziehen)</li>
+  <li>Gefährdungen beurteilen (z.B. Risikomatrix nach Nohl: Wahrscheinlichkeit × Schadensschwere)</li>
+  <li>Maßnahmen festlegen — STOP-Reihenfolge: Substitution → Technisch → Organisatorisch → Persönlich</li>
+  <li>Maßnahmen durchführen (Verantwortliche + Fristen!)</li>
+  <li>Wirksamkeit überprüfen</li>
+  <li>Fortschreiben: jährlich prüfen; sofort bei Unfall, neuer Maschine, Umzug, neuen Arbeitsverfahren</li>
+</ol>
+
+<h2>Checkliste psychische Belastung (Pflicht seit 2013)</h2>
+<ul>
+  <li>Arbeitsintensität: Zeitdruck, Unterbrechungen, Informationsflut</li>
+  <li>Arbeitszeit: Schicht, Überstunden, Erreichbarkeit außerhalb der Arbeitszeit</li>
+  <li>Soziale Beziehungen: Konflikte, fehlende Unterstützung, Führungsverhalten</li>
+  <li>Arbeitsumgebung: Lärm, Enge, Alleinarbeit</li>
+  <li>Handlungsspielraum: Monotonie, fehlende Einflussmöglichkeiten</li>
+</ul>
+<p><strong>Wichtig:</strong> "Keine besonderen Belastungen festgestellt" ist ein
+zulässiges Ergebnis — aber nur, wenn die Erhebung dokumentiert wurde.</p>
+
+<h2>Was prüfen Gewerbeaufsicht und BG?</h2>
+<ol>
+  <li>Existiert eine schriftliche GBU pro Arbeitsbereich?</li>
+  <li>Ist sie aktuell (Revisionsdatum)?</li>
+  <li>Wurde die psychische Belastung betrachtet?</li>
+  <li>Gibt es einen Maßnahmenplan mit Verantwortlichen und Fristen?</li>
+  <li>Wurde die Wirksamkeit der Maßnahmen geprüft?</li>
+</ol>
+<p>Nach einem Arbeitsunfall ist die fehlende GBU das erste, wonach gefragt wird —
+mit Bußgeld- und persönlicher Haftungsfolge für die Geschäftsführung.</p>
+    </main>
+
+    <footer class="cta">
+      <h3>Aus Vorlage wird Workflow.</h3>
+      <p>Diese Checkliste zeigt das Wie. GefaehrdungsbeurteilungAI liefert die Pipeline — Audio rein, fertige Doku raus, in Minuten.</p>
+      <a href="https://gefaehrdungsbeurteilung-ai.de/signup">Kostenlos starten →</a>
+    </footer>
+
+    <footer class="legal">
+      <span>© GefaehrdungsbeurteilungAI</span>
+      <span><a href="https://gefaehrdungsbeurteilung-ai.de/datenschutz" style="color:inherit;">Datenschutz</a> · <a href="https://gefaehrdungsbeurteilung-ai.de/impressum" style="color:inherit;">Impressum</a></span>
+    </footer>
+  </div>
+</body>
+</html>

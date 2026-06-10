@@ -1,0 +1,25 @@
+{
+    "name":  "@flow/ai",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Whisper transcription, Claude generation engine, prompt scaffolding, eval harness",
+    "main":  "./index.ts",
+    "types":  "./index.ts",
+    "exports":  {
+                    ".":  "./index.ts",
+                    "./limits":  "./limits.ts"
+                },
+    "scripts":  {
+                    "type-check":  "tsc --noEmit",
+                    "test":  "echo \"eval harness â€” see src/evals.ts\""
+                },
+    "dependencies":  {
+                         "@anthropic-ai/sdk":  "^0.39.0",
+                         "openai":  "^4.80.1",
+                         "zod":  "^3.24.2"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^22.13.0",
+                            "typescript":  "^5.7.3"
+                        }
+}

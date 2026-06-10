@@ -1,0 +1,23 @@
+{
+    "name":  "@flow/billing",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Stripe integration: multi-product subscriptions, checkout, portal, webhook handler",
+    "main":  "./index.ts",
+    "types":  "./index.ts",
+    "exports":  {
+                    ".":  "./index.ts",
+                    "./catalog":  "./catalog.ts"
+                },
+    "scripts":  {
+                    "type-check":  "tsc --noEmit"
+                },
+    "dependencies":  {
+                         "@flow/db":  "workspace:*",
+                         "stripe":  "^17.7.0"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^22.13.0",
+                            "typescript":  "^5.7.3"
+                        }
+}

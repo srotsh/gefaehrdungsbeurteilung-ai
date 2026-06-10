@@ -1,0 +1,23 @@
+{
+    "name":  "@flow/pdf",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "PDF primitives (header, footer, watermark, signatures) for legal documents",
+    "main":  "./index.ts",
+    "types":  "./index.ts",
+    "exports":  {
+                    ".":  "./index.ts"
+                },
+    "scripts":  {
+                    "type-check":  "tsc --noEmit"
+                },
+    "dependencies":  {
+                         "@react-pdf/renderer":  "^4.3.0",
+                         "react":  "^18.3.1"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^22.13.0",
+                            "@types/react":  "^18.3.18",
+                            "typescript":  "^5.7.3"
+                        }
+}

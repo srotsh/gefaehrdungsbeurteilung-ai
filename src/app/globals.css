@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 27% 98%;
+    --foreground: 0 0% 10%;
+    --primary: 28 60% 40%;
+    --primary-foreground: 36 27% 98%;
+    --muted: 36 27% 95%;
+    --muted-foreground: 0 0% 35%;
+    --border: 36 20% 88%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --radius: 0.5rem;
+  }
+}
+
+body {
+  @apply bg-parchment-100 text-ink antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* German hyphenation + balanced text */
+.prose-de {
+  hyphens: auto;
+  text-wrap: pretty;
+}
+.prose-de p {
+  hyphens: auto;
+}
+
+/* text-balance / text-pretty fallbacks for older browsers */
+.text-balance { text-wrap: balance; }
+.text-pretty  { text-wrap: pretty; }

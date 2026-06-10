@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Type-check
+        run: pnpm type-check
+
+      - name: Tests (if vitest configured)
+        run: |
+          if [ -f vitest.config.ts ]; then pnpm test; else echo "no tests configured"; fi
+
+      - name: Build
+        run: pnpm build
+        env:
+          # Build-time env stubs — Vercel-Deploys nutzen reale ENVs.
+          # Ohne diese Stubs faellt der Build, weil Auth-Routes den Supabase-Client
+          # statisch initialisieren. Werte sind irrelevant fuer den Build, da nur
+          # das Modul-Loading geprueft wird.
+          NEXT_PUBLIC_SUPABASE_URL: https://stub.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-stub-anon-key
+          SUPABASE_SERVICE_ROLE_KEY: ci-stub-service-key
+          NEXT_PUBLIC_APP_URL: http://localhost:3000
+          PRODUCT_SLUG: ci

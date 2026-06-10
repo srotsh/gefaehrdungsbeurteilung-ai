@@ -1,0 +1,18 @@
+{
+  "description": "Synthetischer Sprach-Rundgang durch eine Tischlerei-Werkstatt (Plan-Szenario: Kreissäge ohne Spaltkeil). Keine echten Personendaten.",
+  "tags": ["smoke", "werkstatt"],
+  "input": {
+    "branche": "handwerk_werkstatt",
+    "structuredData": {
+      "arbeitsbereich_name": "Werkstatt EG",
+      "branche": "handwerk_werkstatt",
+      "standort": "Hauptbetrieb Musterstadt",
+      "beschreibung": "Tischlerei, 4 Mitarbeiter"
+    },
+    "transcript": "So, ich stehe jetzt in der Werkstatt im Erdgeschoss, wir machen den Rundgang für die Gefährdungsbeurteilung. Hier vorne ist die Formatkreissäge, die läuft täglich mehrere Stunden. Mir fällt auf, der Spaltkeil ist abmontiert, der liegt da drüben auf der Werkbank, und die Schutzhaube ist hochgeklappt festgebunden. Das ist natürlich ein Problem, da kann es Rückschlag geben. Die Absaugung an der Säge funktioniert, aber der Schlauch zur Bandschleifmaschine ist gerissen, da staubt es ordentlich, Holzstaub liegt auch auf dem Boden. Lärm ist hier generell hoch, wenn die Säge und die Hobelmaschine gleichzeitig laufen, Gehörschutz hängt am Brett, aber die Kollegen tragen ihn nicht immer. Dann haben wir hier hinten das Lager für Lacke und Verdünnung, das steht in einem offenen Regal direkt neben der Schleifecke, da fliegen Funken hin, das müssen wir trennen. Ein Kanister Nitroverdünnung ist nicht beschriftet. Die Steckdose an der Werkbank hat einen Wackelkontakt, das Verlängerungskabel ist an einer Stelle mit Isolierband geflickt. Beim Heben der Plattenware, die Spanplatten wiegen gut vierzig Kilo, heben die Kollegen meistens alleine, da klagt der Markus öfter über den Rücken. Zur Stimmung: Es ist gerade viel Termindruck wegen dem Großauftrag, die Leute machen Überstunden, einer hat gekündigt, das belastet die anderen zusätzlich. Erste-Hilfe-Kasten ist da, aber das Verbandbuch wird nicht geführt. Das war der Rundgang."
+  },
+  "expected": {
+    "minTaetigkeiten": 2,
+    "mustMentionFaktoren": ["mechanisch", "gefahrstoffe", "psychische_belastung"]
+  }
+}

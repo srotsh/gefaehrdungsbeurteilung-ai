@@ -1,0 +1,26 @@
+{
+    "name":  "@flow/auth",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Supabase auth helpers, middleware factory, signup/signin/signout flows",
+    "main":  "./index.ts",
+    "types":  "./index.ts",
+    "exports":  {
+                    ".":  "./index.ts",
+                    "./middleware":  "./middleware.ts"
+                },
+    "scripts":  {
+                    "type-check":  "tsc --noEmit"
+                },
+    "dependencies":  {
+                         "@flow/db":  "workspace:*",
+                         "@supabase/ssr":  "^0.10.2"
+                     },
+    "peerDependencies":  {
+                             "next":  "^14.0.0"
+                         },
+    "devDependencies":  {
+                            "@types/node":  "^22.13.0",
+                            "typescript":  "^5.7.3"
+                        }
+}

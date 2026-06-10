@@ -1,0 +1,40 @@
+{
+    "name":  "@flow/db",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Typed Supabase clients (browser, server, service-role) + DB types",
+    "main":  "./index.ts",
+    "types":  "./index.ts",
+    "exports":  {
+                    ".":  "./index.ts",
+                    "./browser":  "./client-browser.ts",
+                    "./server":  "./client-server.ts",
+                    "./service":  "./client-service.ts",
+                    "./types":  "./types.ts"
+                },
+    "scripts":  {
+                    "lint":  "echo \"@flow/db: lint not configured\"",
+                    "type-check":  "tsc --noEmit",
+                    "gen-types":  "supabase gen types typescript --local \u003e src/types.generated.ts"
+                },
+    "dependencies":  {
+                         "@supabase/ssr":  "^0.10.2",
+                         "@supabase/supabase-js":  "^2.102.1"
+                     },
+    "peerDependencies":  {
+                             "next":  "^14.0.0",
+                             "react":  "^18.0.0"
+                         },
+    "peerDependenciesMeta":  {
+                                 "next":  {
+                                              "optional":  false
+                                          },
+                                 "react":  {
+                                               "optional":  true
+                                           }
+                             },
+    "devDependencies":  {
+                            "@types/node":  "^22.13.0",
+                            "typescript":  "^5.7.3"
+                        }
+}
