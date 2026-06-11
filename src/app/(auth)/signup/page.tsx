@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 };
 
 const VALUE_PROPS = [
-  "Free-Tier ohne Kreditkarte",
-  "Erste Doku in Minuten erstellt",
-  "DSGVO-konform · EU-Hosting",
+  "1 Beurteilung pro Monat gratis — ohne Kreditkarte",
+  "Erstes Dokument in Minuten erstellt",
+  "DSGVO-konform · EU-Hosting (Frankfurt)",
   "Audio-Daten gelöscht nach 30 Tagen",
-  "Jederzeit kündbar",
+  "Monatlich kündbar, Export jederzeit"
 ];
 
 export default function SignupPage() {
@@ -30,9 +30,7 @@ export default function SignupPage() {
             GefaehrdungsbeurteilungAI
           </Link>
           <h1 className="mt-16 font-display text-4xl xl:text-5xl leading-[1.1] text-balance">
-            Audio rein.
-            <br />
-            Fertige Doku raus.
+            Werkstatt-Rundgang einsprechen. Audit-sichere Gefaehrdungsbeurteilung erhalten.
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-parchment-200/90 max-w-md">
             Gefaehrdungsbeurteilung nach Paragraph 5/6 ArbSchG. Audit-sicher. In Stunden statt Wochen.

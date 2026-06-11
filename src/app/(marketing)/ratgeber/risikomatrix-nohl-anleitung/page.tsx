@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "So stufen Sie Gefährdungen nachvollziehbar ein — mit Beispielen pro Risikostufe und Handlungsbedarf.",
   alternates: { canonical: "/ratgeber/risikomatrix-nohl-anleitung" },
   openGraph: { title: "Risikomatrix nach Nohl: Wahrscheinlichkeit × Schadensschwere richtig bewerten", description: "So stufen Sie Gefährdungen nachvollziehbar ein — mit Beispielen pro Risikostufe und Handlungsbedarf." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

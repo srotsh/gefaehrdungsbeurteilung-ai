@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "80 % der Betriebe vergessen sie — was die GB psych enthalten muss, welche Methoden anerkannt sind und was die Gewerbeaufsicht prüft.",
   alternates: { canonical: "/ratgeber/psychische-belastung-gefaehrdungsbeurteilung" },
   openGraph: { title: "Psychische Belastung in der Gefährdungsbeurteilung: Pflicht seit 2013", description: "80 % der Betriebe vergessen sie — was die GB psych enthalten muss, welche Methoden anerkannt sind und was die Gewerbeaufsicht prüft." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

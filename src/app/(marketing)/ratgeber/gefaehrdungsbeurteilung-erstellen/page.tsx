@@ -1,12 +1,15 @@
 /* AUTO-GENERATED skeleton — wird vom Generator ueberschrieben bis manuell ausgearbeitet. Marker entfernen um Schutz zu aktivieren. */
 import type { Metadata } from "next";
 import { ArticleHead, ArticleBody, Callout } from "@/components/marketing/article";
+import { LeadMagnetCTA } from "@/components/marketing/lead-magnet-cta";
 
 export const metadata: Metadata = {
   title: "Gefährdungsbeurteilung erstellen: Schritt-für-Schritt nach §5/§6 ArbSchG (2026)",
   description: "Wer muss, was gehört hinein, wie dokumentieren Sie audit-sicher — mit Risikomatrix, STOP-Maßnahmen und Wiedervorlage.",
   alternates: { canonical: "/ratgeber/gefaehrdungsbeurteilung-erstellen" },
   openGraph: { title: "Gefährdungsbeurteilung erstellen: Schritt-für-Schritt nach §5/§6 ArbSchG (2026)", description: "Wer muss, was gehört hinein, wie dokumentieren Sie audit-sicher — mit Risikomatrix, STOP-Maßnahmen und Wiedervorlage." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {
@@ -69,6 +72,12 @@ export default function Page() {
           {/* Skeleton-Artikel — Inhalt wird sukzessive ausgearbeitet. */}
           "⭐ Pillar-Artikel — bitte mit voller Tiefe ausarbeiten (12 Min Zielzeit)."
         </Callout>
+      
+        <LeadMagnetCTA
+          asset="gbu-pflicht-check"
+          headline="Gratis-Download: GBU-Pflicht-Check"
+          bullets={["Selbst-Check: Bin ich GBU-pflichtig?", "Die 7 Schritte zur audit-sicheren Beurteilung", "Checkliste psychische Belastung (Pflicht seit 2013)"]}
+        />
       </ArticleBody>
     </article>
   );

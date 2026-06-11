@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Substitution vor Technik vor Organisation vor PSA — warum die Reihenfolge zählt und wie Sie sie dokumentieren.",
   alternates: { canonical: "/ratgeber/stop-prinzip-massnahmen" },
   openGraph: { title: "Das STOP-Prinzip: Maßnahmen in der rechtlich richtigen Reihenfolge", description: "Substitution vor Technik vor Organisation vor PSA — warum die Reihenfolge zählt und wie Sie sie dokumentieren." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

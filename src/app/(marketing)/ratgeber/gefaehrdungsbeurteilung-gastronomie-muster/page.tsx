@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Schnittverletzungen, heiße Oberflächen, Rutschgefahr, Stress im Service — die Gastro-Vorlage.",
   alternates: { canonical: "/ratgeber/gefaehrdungsbeurteilung-gastronomie-muster" },
   openGraph: { title: "Gefährdungsbeurteilung Gastronomie/Küche: Muster und Checkliste", description: "Schnittverletzungen, heiße Oberflächen, Rutschgefahr, Stress im Service — die Gastro-Vorlage." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

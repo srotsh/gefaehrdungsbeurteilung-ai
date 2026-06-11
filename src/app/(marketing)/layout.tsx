@@ -73,21 +73,11 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
               <li><Link href="/" className="text-ink-muted hover:text-cognac-700 transition">Übersicht</Link></li>
               <li><Link href="/preise" className="text-ink-muted hover:text-cognac-700 transition">Preise</Link></li>
               <li><Link href="/ratgeber" className="text-ink-muted hover:text-cognac-700 transition">Ratgeber</Link></li>
+              <li><Link href="/avv" className="text-ink-muted hover:text-cognac-700 transition">AVV (Art. 28 DSGVO)</Link></li>
               <li><Link href="/signup" className="text-ink-muted hover:text-cognac-700 transition">Kostenlos starten</Link></li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-ink">Andere Produkte</h3>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li><a href="https://vorstandsprotokoll.de" className="text-ink-muted hover:text-cognac-700 transition" rel="noopener">VorstandsprotokollAI</a></li>
-              <li><a href="https://jahresabrechnung.de" className="text-ink-muted hover:text-cognac-700 transition" rel="noopener">JahresabrechnungAI</a></li>
-              <li><a href="https://beratungsprotokoll.de" className="text-ink-muted hover:text-cognac-700 transition" rel="noopener">BeratungsprotokollAI</a></li>
-              <li><a href="https://pflegedoku.de" className="text-ink-muted hover:text-cognac-700 transition" rel="noopener">PflegedokuAI</a></li>
-              <li><a href="https://mitarbeitergespraech.de" className="text-ink-muted hover:text-cognac-700 transition" rel="noopener">MitarbeitergespraechAI</a></li>
-              <li><a href="https://therapiedoku.de" className="text-ink-muted hover:text-cognac-700 transition" rel="noopener">TherapieDokuFlow</a></li>
-            </ul>
-          </div>
         </div>
 
         <div className="border-t border-parchment-200/80">

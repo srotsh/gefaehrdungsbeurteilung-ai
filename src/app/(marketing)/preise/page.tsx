@@ -41,8 +41,8 @@ export default function PreisePage() {
             Klein anfangen, mitwachsen.
           </h1>
           <p className="mt-5 text-lg text-ink-muted mx-auto max-w-2xl">
-            Free zum Testen, ab 49 EUR/Monat im Starter, jederzeit kündbar.
-            Jährlich zahlen spart 2 Monate.
+            Free zum Testen (1 Beurteilung pro Monat gratis), Starter 79 EUR/Monat,
+            Pro 149 EUR/Monat — monatlich kündbar. Jährlich zahlen spart 2 Monate.
           </p>
 
           <div className="mt-8 inline-flex rounded-full border border-parchment-300 bg-white p-1 text-sm">
@@ -150,6 +150,13 @@ export default function PreisePage() {
           <p className="mt-8 text-center text-xs text-ink-subtle">
             Alle Preise zzgl. gesetzlicher MwSt. SEPA oder Kreditkarte. Monatlich kündbar.
           </p>
+          <p className="mt-3 text-center text-sm text-ink-muted">
+            Höherer Bedarf, mehrere Standorte oder Team-Lizenzen?{" "}
+            <a href="mailto:kontakt@gefaehrdungsbeurteilung-ai.de" className="font-semibold text-cognac-700 underline-offset-4 hover:underline">
+              Sprechen Sie mit uns
+            </a>
+            .
+          </p>
         </Container>
       </Section>
 
@@ -179,8 +186,8 @@ export default function PreisePage() {
             </FaqItem>
             <FaqItem q="Was passiert mit meinen Daten beim Down-Grade auf Free?">
               Bestehende Vorgänge bleiben einsehbar, neue Vorgänge zählen gegen
-              das Free-Limit von 2/Monat. Audio-Dateien werden nach unserem
-              30-Tage-DSGVO-Lifecycle ohnehin gelöscht.
+              das Free-Limit. Ihre Dokumente exportieren Sie jederzeit als PDF —
+              kein Lock-in.
             </FaqItem>
             <FaqItem q="Bietet ihr Team-/Mehrplatz-Lizenzen?">
               Pro-Plan ist Single-Account. Für Agenturen / mehrere Standorte

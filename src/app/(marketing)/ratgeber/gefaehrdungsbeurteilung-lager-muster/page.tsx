@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Flurförderzeuge, manuelle Lastenhandhabung, Verkehrswege — die Logistik-Vorlage.",
   alternates: { canonical: "/ratgeber/gefaehrdungsbeurteilung-lager-muster" },
   openGraph: { title: "Gefährdungsbeurteilung Lager/Logistik: Muster mit Stapler-Verkehr", description: "Flurförderzeuge, manuelle Lastenhandhabung, Verkehrswege — die Logistik-Vorlage." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

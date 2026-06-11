@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Ab dem ersten Beschäftigten gilt die Pflicht — was Gewerbeaufsicht und BG verlangen, welche Bußgelder drohen.",
   alternates: { canonical: "/ratgeber/gbu-pflicht-check" },
   openGraph: { title: "Bin ich GBU-pflichtig? Der Schnell-Check für Arbeitgeber", description: "Ab dem ersten Beschäftigten gilt die Pflicht — was Gewerbeaufsicht und BG verlangen, welche Bußgelder drohen." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

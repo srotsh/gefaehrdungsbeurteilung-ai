@@ -65,7 +65,7 @@ export default function AVVPage() {
         dieser AVV hinsichtlich des Datenschutzes vor.
       </p>
       <p className="text-xs text-muted-foreground">
-        Stand: 2026-06-10. {/* TODO(verify): Vor Live-Schaltung von Datenschutzberater/Anwalt pruefen lassen. */}
+        Stand: 2026-06-11. {/* TODO(verify): Vor Live-Schaltung von Datenschutzberater/Anwalt pruefen lassen. */}
       </p>
       <p className="text-xs text-destructive font-semibold">Platzhalter-Anbieterdaten. Vor Live-Schaltung LEGAL-Block in shared-core/scripts/PRODUCT_REGISTRY.py fuellen und neu generieren.</p>
     </div>

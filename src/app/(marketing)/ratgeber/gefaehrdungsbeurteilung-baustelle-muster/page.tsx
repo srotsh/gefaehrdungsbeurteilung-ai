@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Absturz, Heben/Tragen, Witterung — was auf jeder Baustelle bewertet werden muss.",
   alternates: { canonical: "/ratgeber/gefaehrdungsbeurteilung-baustelle-muster" },
   openGraph: { title: "Gefährdungsbeurteilung Baustelle: Muster nach BaustellV", description: "Absturz, Heben/Tragen, Witterung — was auf jeder Baustelle bewertet werden muss." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

@@ -1,89 +1,16 @@
 import Link from "next/link";
-import { ArrowRight, Mic, FileText, Calculator, Building2 } from "lucide-react";
-import { RELATED_MAP, type ConversionVariant } from "./related-map";
+import { ArrowRight } from "lucide-react";
+import { RELATED_MAP } from "./related-map";
+import { VARIANT_CONFIG } from "./cta-config";
 
 /**
- * Konversions-CTA am Artikelende. Vier Varianten, die thematisch
- * zum Artikel passen — vermeidet generische "Jetzt registrieren!"-CTAs
- * und holt den Leser dort ab, wo er thematisch ist.
+ * Konversions-CTA am Artikelende. Die Varianten-Inhalte sind PRODUKT-
+ * SPEZIFISCH und werden von gen-ratgeber.py in ./cta-config.ts generiert
+ * (Quelle: PRODUCT_REGISTRY) — hier liegt nur das Layout.
  *
- *  - protokoll  → Audio-zu-Protokoll Hauptprodukt (/weg-protokoll-ki)
- *  - beschluss  → Beschluss-Bibliothek (/weg-protokoll-ki + /signup)
- *  - finanzen   → Pricing-Page mit ROI-Argument (/pricing)
- *  - verwalter  → Demo-Termin (/demo + /pricing)
- *
- * Variante wird in `related-map.ts` pro Slug gepflegt.
+ * Variante pro Artikel wird in `related-map.ts` gepflegt; Artikel können
+ * Headline/Body/CTA per Props überschreiben (Legacy-API).
  */
-
-const VARIANT_CONFIG: Record<
-  ConversionVariant,
-  {
-    Icon: typeof Mic;
-    eyebrow: string;
-    headline: string;
-    body: string;
-    primary: { label: string; href: string };
-    secondary: { label: string; href: string };
-    bullets: string[];
-  }
-> = {
-  protokoll: {
-    Icon: Mic,
-    eyebrow: "ProtokollFlow",
-    headline: "Aus 4 Stunden Protokollarbeit werden 10 Minuten.",
-    body:
-      "ProtokollFlow transkribiert die Audio-Aufnahme Ihrer Eigentümerversammlung und generiert ein vollständiges, rechtssicheres WEG-Protokoll — inklusive aller TOPs, Beschlüsse und Abstimmungsergebnisse. Sie prüfen, korrigieren, exportieren als PDF.",
-    primary: { label: "Kostenlos testen", href: "/signup" },
-    secondary: { label: "So funktioniert's", href: "/weg-protokoll-ki" },
-    bullets: [
-      "Erstes Protokoll gratis — keine Kreditkarte",
-      "DSGVO-konform, Server in Frankfurt",
-      "Erkennt TOPs, Beschlüsse und Abstimmungen automatisch",
-    ],
-  },
-  beschluss: {
-    Icon: FileText,
-    eyebrow: "ProtokollFlow",
-    headline: "Beschluss-Wortlaut wörtlich ins Protokoll — automatisch.",
-    body:
-      "Die KI von ProtokollFlow erkennt den exakten Beschluss-Wortlaut im Audio, übernimmt ihn unverändert ins Protokoll und markiert unklare Stellen mit [PRÜFEN]. Kein nachträgliches Glätten, kein Anfechtungsrisiko durch Umformulierung.",
-    primary: { label: "Kostenlos testen", href: "/signup" },
-    secondary: { label: "Preise ansehen", href: "/pricing" },
-    bullets: [
-      "Wörtliche Übernahme aller Beschluss-Texte",
-      "[PRÜFEN]-Marker für unklare Stellen",
-      "Mehrheits-Berechnung nach MEA inklusive",
-    ],
-  },
-  finanzen: {
-    Icon: Calculator,
-    eyebrow: "ProtokollFlow für Hausverwaltungen",
-    headline: "Mehr Zeit für das, was Geld verdient.",
-    body:
-      "Eine durchschnittliche WEG-Versammlung kostet 3–4 Stunden Nachbearbeitung. Bei 50 Versammlungen pro Jahr sind das 150–200 Stunden. Zum Stundensatz Ihrer Verwaltung sind das mehrere Tausend Euro. ProtokollFlow refinanziert sich nach 1–2 Versammlungen.",
-    primary: { label: "Preise ansehen", href: "/pricing" },
-    secondary: { label: "ROI-Demo anfragen", href: "/demo" },
-    bullets: [
-      "Ab 99 € / Monat — ROI nach 1-2 Versammlungen",
-      "20 Protokolle pro Monat im Starter-Tarif",
-      "Keine Setup-Kosten, monatlich kündbar",
-    ],
-  },
-  verwalter: {
-    Icon: Building2,
-    eyebrow: "ProtokollFlow für Hausverwaltungen",
-    headline: "So digitalisieren Sie Ihre Versammlungs-Workflow.",
-    body:
-      "73 % der Hausverwaltungen nennen Personalmangel als größte Herausforderung. Wer Protokolle nicht mehr von Hand schreibt, gewinnt Stunden zurück — pro Versammlung. ProtokollFlow ist DSGVO-konform, in 5 Minuten eingerichtet und in jeden Workflow integrierbar.",
-    primary: { label: "Demo vereinbaren", href: "/demo" },
-    secondary: { label: "Preise ansehen", href: "/pricing" },
-    bullets: [
-      "DSGVO-konform mit Auftragsverarbeitungsvertrag",
-      "Kostenlose Migration Ihrer WEG-Stammdaten",
-      "Integration in DATEV, Domus, ImmoWare möglich",
-    ],
-  },
-};
 
 export function ConversionCTA({
   slug,

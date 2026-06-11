@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, Calendar, User } from "lucide-react";
 import { Container, Section, Eyebrow } from "@/components/marketing/section";
+import { LeadMagnetCTA } from "@/components/marketing/lead-magnet-cta";
 
 /**
  * ArticleShell — replacement für das alte `<article className="mx-auto max-w-3xl">`-Pattern.
@@ -101,9 +102,13 @@ export function ArticleHead({
 export function ArticleBody({
   children,
   className = "",
+  withLeadMagnet = true,
 }: {
   children: React.ReactNode;
   className?: string;
+  /** Lead-Magnet am Artikelende (CRO B5). Pillar-Artikel mit eigenem
+   *  Inline-Magnet können das abschalten. */
+  withLeadMagnet?: boolean;
 }) {
   return (
     <Section tone="default" className="pb-16 md:pb-20">
@@ -126,6 +131,7 @@ export function ArticleBody({
         >
           {children}
         </div>
+        {withLeadMagnet && <LeadMagnetCTA />}
       </Container>
     </Section>
   );

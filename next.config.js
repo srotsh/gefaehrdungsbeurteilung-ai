@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  // Kein "standalone": Deploy-Ziel ist Vercel (ignoriert standalone) und der
+  // Symlink-Kopierschritt schlaegt unter Windows/pnpm fehl.
   transpilePackages: [
     "@flow/core",
     "@flow/auth",

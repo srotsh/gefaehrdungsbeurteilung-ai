@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Kreissäge, Absaugung, Gefahrstoffe, Lärm — branchentypische Gefährdungen mit STOP-Maßnahmen.",
   alternates: { canonical: "/ratgeber/gefaehrdungsbeurteilung-werkstatt-muster" },
   openGraph: { title: "Gefährdungsbeurteilung Werkstatt/Handwerk: Muster mit Maschinenliste", description: "Kreissäge, Absaugung, Gefahrstoffe, Lärm — branchentypische Gefährdungen mit STOP-Maßnahmen." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {

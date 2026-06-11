@@ -1,12 +1,14 @@
 /* AUTO-GENERATED via shared-core/scripts/gen-landing-pages.py
- * Edits in PRODUCT_REGISTRY.marketing[GefaehrdungsbeurteilungAI] -> Generator neu laufen lassen.
+ * Edits in PRODUCT_REGISTRY[GefaehrdungsbeurteilungAI] -> Generator neu laufen lassen.
  */
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, ShieldCheck, Server, FileDown, Lock, Timer } from "lucide-react";
 import { Section, Container, Eyebrow } from "@/components/marketing/section";
 import { TrackedLink } from "@/components/analytics/tracked-link";
 import { ProductMockup } from "@/components/marketing/product-mockup";
+import { RoiCalculator } from "@/components/marketing/roi-calculator";
+import { LeadMagnetCTA } from "@/components/marketing/lead-magnet-cta";
 
 
 export const metadata: Metadata = {
@@ -40,6 +42,18 @@ const FAQS = [
   { q: "Ist das rechtlich ausreichend?", a: "Wir liefern die strukturierte Dokumentation nach Paragraph 5/6 ArbSchG mit Risikomatrix und Massnahmenplan. Die inhaltliche Verantwortung traegt der Arbeitgeber bzw. die Fachkraft fuer Arbeitssicherheit." },
             { q: "Welche Branchen?", a: "Buero, Handwerk/Werkstatt, Bau, Gastronomie, Einzelhandel, Logistik/Lager, Pflege, Kfz, Friseur/Kosmetik, Produktion - weitere auf Anfrage." },
             { q: "Fuer SiFa-Berater geeignet?", a: "Ja - Sie verwalten mehrere Arbeitsbereiche und exportieren pro Kunde ein vollstaendiges Dokument mit Ihrem Briefkopf (Pro-Plan)." },
+            { q: "Was passiert mit meinen Daten — trainiert die KI damit?", a: "Nein. Ihre Inhalte werden ausschliesslich zur Erstellung Ihrer Dokumente verarbeitet und nicht fuer KI-Training verwendet. Hosting in der EU (Frankfurt), Details in der Datenschutzerklaerung." },
+            { q: "Wer haftet fuer den Inhalt der Dokumente?", a: "Sie pruefen jedes Dokument vor der Finalisierung im Editor — die inhaltliche Verantwortung traegt der unterzeichnende Verantwortliche. Wir liefern die strukturierte, formell korrekte Dokumentation." },
+            { q: "Was sage ich meinem Datenschutzbeauftragten?", a: "Den Auftragsverarbeitungsvertrag nach Art. 28 DSGVO koennen Sie jederzeit unter /avv abrufen und drucken — inklusive Liste aller Unterauftragsverarbeiter." },
+            { q: "Wie komme ich wieder raus?", a: "Monatlich kuendbar zum Periodenende, Ihre Dokumente exportieren Sie jederzeit als PDF. Kein Lock-in." },
+];
+
+const TRUST = [
+  { Icon: ShieldCheck, label: "DSGVO-konform" },
+  { Icon: Server, label: "EU-Hosting (Frankfurt)" },
+  { Icon: FileDown, label: "AVV zum Download", href: "/avv" },
+  { Icon: Timer, label: "Audio nach 30 Tagen gelöscht" },
+  { Icon: Lock, label: "Keine KI-Trainingsnutzung Ihrer Daten" },
 ];
 
 export default function HomePage() {
@@ -74,8 +88,28 @@ export default function HomePage() {
             </TrackedLink>
           </div>
           <p className="mt-5 text-xs text-ink-subtle">
-            Kostenlos starten. Keine Kreditkarte. DSGVO-konform.
+            1 Beurteilung pro Monat gratis — keine Kreditkarte.
           </p>
+
+          {/* TRUST STRIP */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-ink-muted">
+            {TRUST.map((t) => {
+              const Icon = t.Icon;
+              const inner = (
+                <span className="inline-flex items-center gap-1.5">
+                  <Icon className="h-3.5 w-3.5 text-petrol-700" /> {t.label}
+                </span>
+              );
+              return t.href ? (
+                <Link key={t.label} href={t.href} className="hover:text-cognac-700 underline-offset-4 hover:underline">
+                  {inner}
+                </Link>
+              ) : (
+                <span key={t.label}>{inner}</span>
+              );
+            })}
+          </div>
+
           <div className="mt-12 max-w-5xl mx-auto">
             <ProductMockup />
           </div>
@@ -152,6 +186,19 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* ROI */}
+      <Section tone="default" className="py-16 md:py-24">
+        <Container>
+          <div className="text-center mb-10">
+            <Eyebrow>Rechnet sich das?</Eyebrow>
+            <h2 className="mt-3 font-display text-display-md text-ink">
+              Rechnen Sie mit Ihren eigenen Zahlen.
+            </h2>
+          </div>
+          <RoiCalculator />
+        </Container>
+      </Section>
+
       {/* PRICING CTA */}
       <Section tone="deep" className="py-16 md:py-20 text-center">
         <Container size="narrow">
@@ -160,8 +207,8 @@ export default function HomePage() {
             Klein anfangen, mitwachsen.
           </h2>
           <p className="mt-4 text-lg text-parchment-200 mx-auto max-w-xl">
-            Free, Starter ab 49 EUR/Monat, Pro ab 149 EUR/Monat. Jährlich
-            zahlen spart 2 Monate.
+            Free (1 Beurteilung pro Monat gratis), Starter 79 EUR/Monat,
+            Pro 149 EUR/Monat. Jährlich zahlen spart 2 Monate. Monatlich kündbar.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <TrackedLink
@@ -184,13 +231,24 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* LEAD MAGNET */}
+      <Section tone="surface" className="py-16 md:py-20">
+        <Container size="narrow">
+          <LeadMagnetCTA
+            asset="gbu-pflicht-check"
+            headline="Gratis-Download: GBU-Pflicht-Check"
+            bullets={["Selbst-Check: Bin ich GBU-pflichtig?", "Die 7 Schritte zur audit-sicheren Beurteilung", "Checkliste psychische Belastung (Pflicht seit 2013)"]}
+          />
+        </Container>
+      </Section>
+
       {/* FAQ */}
       <Section tone="default" className="py-16 md:py-24">
         <Container size="narrow">
           <div className="text-center mb-10">
             <Eyebrow>Häufige Fragen</Eyebrow>
             <h2 className="mt-3 font-display text-display-md text-ink">
-              Antworten in einem Satz.
+              Die Fragen, die uns wirklich gestellt werden.
             </h2>
           </div>
           <div className="space-y-4">
@@ -239,7 +297,7 @@ export default function HomePage() {
             </TrackedLink>
           </div>
           <p className="mt-4 text-xs text-ink-subtle">
-            DSGVO-konform · EU-Server · Audio-Daten gelöscht nach 30 Tagen
+            1 Beurteilung pro Monat gratis — DSGVO-konform · EU-Server · Audio nach 30 Tagen gelöscht
           </p>
         </Container>
       </Section>

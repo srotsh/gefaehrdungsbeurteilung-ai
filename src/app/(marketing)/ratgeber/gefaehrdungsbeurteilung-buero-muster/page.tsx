@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Bildschirmarbeit, Ergonomie, psychische Belastung — die komplette Vorlage für Büro-Arbeitsplätze.",
   alternates: { canonical: "/ratgeber/gefaehrdungsbeurteilung-buero-muster" },
   openGraph: { title: "Gefährdungsbeurteilung Büro: Muster und typische Gefährdungen", description: "Bildschirmarbeit, Ergonomie, psychische Belastung — die komplette Vorlage für Büro-Arbeitsplätze." },
+  // Skeleton-Artikel: erst indexieren lassen, wenn der Inhalt ausgearbeitet ist.
+  robots: { index: false, follow: true },
 };
 
 const articleJsonLd = {
