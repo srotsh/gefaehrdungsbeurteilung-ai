@@ -14,12 +14,15 @@ import { Check, X } from "lucide-react";
  */
 
 export function ProsCons({
+  title,
   pros,
   cons,
   prosLabel = "Vorteile",
   consLabel = "Nachteile",
   className = "",
 }: {
+  /** Optionale Überschrift über beiden Spalten (Legacy-API). */
+  title?: string;
   pros: string[];
   cons: string[];
   prosLabel?: string;
@@ -27,9 +30,16 @@ export function ProsCons({
   className?: string;
 }) {
   return (
-    <div className={`my-8 grid gap-4 sm:grid-cols-2 ${className}`}>
-      <Column items={pros} label={prosLabel} variant="pro" />
-      <Column items={cons} label={consLabel} variant="con" />
+    <div className={`my-8 ${className}`}>
+      {title && (
+        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-muted">
+          {title}
+        </p>
+      )}
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Column items={pros} label={prosLabel} variant="pro" />
+        <Column items={cons} label={consLabel} variant="con" />
+      </div>
     </div>
   );
 }

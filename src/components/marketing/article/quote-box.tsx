@@ -12,17 +12,21 @@ import { Quote } from "lucide-react";
 
 export function QuoteBox({
   children,
+  quote,
   author,
   role,
   source,
   className = "",
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  /** Alternative zu children (Legacy-API der handgeschriebenen Artikel). */
+  quote?: string;
   author?: string;
   role?: string;
   source?: string;
   className?: string;
 }) {
+  const content = children ?? quote;
   return (
     <figure
       className={`relative my-10 rounded-xl bg-petrol-700 p-7 sm:p-9 ${className}`}
@@ -33,7 +37,7 @@ export function QuoteBox({
       />
       <blockquote className="mt-4 pl-9">
         <p className="font-display text-[1.15rem] leading-relaxed text-parchment-50 text-pretty sm:text-[1.25rem]">
-          {children}
+          {content}
         </p>
         {(author || source) && (
           <figcaption className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">

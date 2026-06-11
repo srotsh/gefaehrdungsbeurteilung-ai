@@ -65,18 +65,23 @@ const variantConfig: Record<
 };
 
 export function Callout({
-  variant = "info",
+  variant,
+  tone,
   title,
   children,
   className = "",
 }: {
   variant?: Variant;
+  /** Alias für variant (Legacy-API der handgeschriebenen Artikel). */
+  tone?: Variant | "default" | "warm";
   title?: string;
   children: React.ReactNode;
   className?: string;
 }) {
-  const c = variantConfig[variant];
-  const isLegal = variant === "legal";
+  const toneMap: Record<string, Variant> = { default: "info", warm: "tip" };
+  const v: Variant = variant ?? (tone ? (toneMap[tone] ?? (tone as Variant)) : "info");
+  const c = variantConfig[v];
+  const isLegal = v === "legal";
 
   return (
     <aside

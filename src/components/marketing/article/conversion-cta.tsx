@@ -85,10 +85,32 @@ const VARIANT_CONFIG: Record<
   },
 };
 
-export function ConversionCTA({ slug }: { slug: string }) {
-  const config = RELATED_MAP[slug];
-  if (!config) return null;
-  const v = VARIANT_CONFIG[config.cta];
+export function ConversionCTA({
+  slug,
+  headline,
+  body,
+  ctaLabel,
+  ctaHref,
+}: {
+  /** Modern: Variante kommt aus related-map.ts. */
+  slug?: string;
+  /** Legacy: Karte direkt parametrisieren. */
+  headline?: string;
+  body?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}) {
+  const config = slug ? RELATED_MAP[slug] : undefined;
+  const base = VARIANT_CONFIG[config?.cta ?? "protokoll"];
+  if (!config && !headline) return null;
+  const v = {
+    ...base,
+    headline: headline ?? base.headline,
+    body: body ?? base.body,
+    primary: ctaLabel || ctaHref
+      ? { label: ctaLabel ?? base.primary.label, href: ctaHref ?? base.primary.href }
+      : base.primary,
+  };
   const Icon = v.Icon;
 
   return (
